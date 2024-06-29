@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Our Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="icon" type="image/svg+xml" href="images/rolex.svg">
+    <style>
+        body {
+            background: url('./images/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            transition: opacity 0.5s ease-in-out;
+            position: relative;
+            color: #fff;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: black;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            color: gold;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        .navbar img {
+            cursor: pointer;
+            height: auto;
+            width: 90px;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 0.2rem;
+            color: gold;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 6rem;
+            z-index: 2;
+        }
+
+        .container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container p {
+            margin-bottom: 2rem;
+        }
+
+        .container a {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: gold;
+            color: black;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .container a:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #000;
+            color: gold;
+            text-align: center;
+            padding: 0.5rem 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            font-size: 0.8rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .navbar-links a {
+                display: none;
+            }
+
+            .social-icons span {
+                display: none;
+            }
+
+            .social-icons {
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .navbar {
+                padding: 0.5rem;
+            }
+
+            .logo-container img {
+                width: 70px;
+            }
+
+            .container h1 {
+                font-size: 1.5rem;
+            }
+
+            .container a {
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+    <div class="overlay"></div>
+    <div class="navbar">
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="feedback.html" id="rate-link">Rate our Services</a>
+        </div>
+        <div class="logo-container">
+            <img src="./images/rolex.png" alt="Logo" onclick="window.location.href='index.html'">
+        </div>
+        <div class="social-icons">
+            <span>Our Socials:</span> 
+            <a href="https://www.instagram.com/rolex/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/rolex/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Claim your discount now!</h1>
+        <p>(You will receive your discount code via email) </p>
+        <a href="feedback.html" id="rate-button">Rate our Services</a>
+    </div>
+    <div class="footer">
+        &copy; 2024 Rolex. All Rights Reserved.
+    </div>
+    <script>
+        document.getElementById('rate-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 500);
+        });
+
+        document.getElementById('rate-button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 500);
+        });
+
+        window.addEventListener('load', () => {
+            document.body.classList.add('fade-in');
+        });
+    </script>
+</body>
+
+</html>
